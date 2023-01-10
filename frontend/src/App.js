@@ -44,7 +44,7 @@ function App() {
                 <Route path="/sales-invoices" element={<SalesInvoices />} />
 
                 <Route path="/home" element={<Home />} />
-                <Route exact path="/" element={<Navigate to={"/home"} />} />
+                <Route exact path="/" element={ getCurrentUser() ? <Navigate to={"/home"} /> : <Navigate to={"/login"} /> } />
             </Routes>
         </div>
     );
