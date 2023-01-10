@@ -46,7 +46,7 @@ const Products = () => {
                                 <td>{product.supplier ? product.supplier.name : ""}</td>
                                 <td>{Number(product.price).toLocaleString()}</td>
                                 <td>{product.created_by}</td>
-                                <td>{product.updated_by}</td>
+                                <td>{product.last_updated_by}</td>
                                 <td>
                                     <Link to={`/product/edit/${product.id}`} className="btn btn-success btn-sm me-1">
                                         Update
