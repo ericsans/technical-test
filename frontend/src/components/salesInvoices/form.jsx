@@ -141,7 +141,7 @@ const SalesInvoiceForm = () => {
                                             <option value="">-Pilih Product-</option>
                                             {products.map(product => <option key={product.id} value={product.id}>{product.name}</option> )}
                                         </select>
-                                        {errors.sales_invoice_details && errors.sales_invoice_details[index].product_id && <label className="text-danger">{errors.sales_invoice_details && errors.sales_invoice_details[index].product_id}</label>}
+                                        {errors[`sales_invoice_details.${index}.product_id`] && <label className="text-danger">{errors[`sales_invoice_details.${index}.product_id`][0]}</label>}
                                     </td>
                                     <td>
                                         <Cleave 
@@ -154,7 +154,7 @@ const SalesInvoiceForm = () => {
                                             onChange={handleSaleInvoiceDetailsQuantityChanged}
                                             options={{ numeral: true, numeralThousandsGroupStyle: "thousand" }} 
                                         />
-                                        {errors.sales_invoice_details && errors.sales_invoice_details[index].quantity && <label className="text-danger">{errors.sales_invoice_details && errors.sales_invoice_details[index].quantity}</label>}
+                                        {errors[`sales_invoice_details.${index}.quantity`] && <label className="text-danger">{errors[`sales_invoice_details.${index}.quantity`][0]}</label>}
                                     </td>
                                     <td>
                                         <Cleave 
@@ -166,7 +166,7 @@ const SalesInvoiceForm = () => {
                                             options={{ numeral: true, numeralThousandsGroupStyle: "thousand" }} 
                                             readOnly
                                         />
-                                        {errors.sales_invoice_details && errors.sales_invoice_details[index].price && <label className="text-danger">{errors.sales_invoice_details && errors.sales_invoice_details[index].price}</label>}
+                                         {errors[`sales_invoice_details.${index}.price`] && <label className="text-danger">{errors[`sales_invoice_details.${index}.price`][0]}</label>}
                                     </td>
                                     <td>
                                         <Cleave 
@@ -178,7 +178,7 @@ const SalesInvoiceForm = () => {
                                             options={{ numeral: true, numeralThousandsGroupStyle: "thousand" }} 
                                             readOnly
                                         />
-                                        {errors.sales_invoice_details && errors.sales_invoice_details[index].total && <label className="text-danger">{errors.sales_invoice_details && errors.sales_invoice_details[index].total}</label>}
+                                         {errors[`sales_invoice_details.${index}.total`] && <label className="text-danger">{errors[`sales_invoice_details.${index}.total`][0]}</label>}
                                     </td>
                                     <td>
                                         <button type="button" onClick={() => handleDeleteSalesInvoiceDetails(index)} className="btn btn-danger btn-sm">
